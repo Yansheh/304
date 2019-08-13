@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Site made with Mobirise Website Builder v4.10.0, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.10.0, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  <title>Line</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+<script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+<script type = "text/javascript"></script> 
+	
+	
+</head>
+<script>
+    
+
+  
+
+  $(document).ready(function(){
+  
+  $("#edit").click(function(){  
+
+      var login=$("#login").val();
+        var pass=$("#password").val();
+        var mydata="login="+login+"&password="+pass;
+        console.log(mydata);
+            
+        
+        $.ajax({
+            type: 'PUT',
+            url: 'http://127.0.0.1:9999/update',
+            //dataType:"text",
+            data:mydata,
+            success: function(data) {
+      alert(data);  ///////////////////////3/7
+      
+            if(data=="Updated"){   
+      localStorage.setItem("exist",$("#password").val());  //4/8
+      alert("exist=" + localStorage.getItem("exist"));  //4/8
+      location.href="/member";
+                   
+      }
+
+      
+      alert("GO GO GO!!!");
+                console.log('yay');
+                console.log(data);              
+            },
+            error: function(xhr, status, error) {
+                console.log('Error: ' + error.message);
+            }
+        });
+    
+    
+    
+    
+    });
+  
+  });
+  
+</script>
+</head>  
+
+
+
+<body>
+
+
+<script src="assets/web/assets/jquery/jquery.min.js"></script>
+
+
+<section class="mbr-section form3 cid-rpSPIvYuR3" id="form3-8">
+
+    
+
+    
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-12 col-lg-8">
+                <h2 class="align-center pb-2 mbr-fonts-style display-2">
+                    Update
+                </h2>
+                <h3 class="mbr-section-subtitle align-center pb-5 mbr-light mbr-fonts-style display-5">
+                    Password
+                </h3>
+            </div>
+        </div>
+
+        <div class="row py-2 justify-content-center">
+            <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
+                <!---Formbuilder Form--->
+                <form class="mbr-form form-with-styler">
+                    <div class="row">
+
+                    </div>
+                    <!--<div class="dragArea row">-->
+                        <div class="form-group col" data-for="text">
+                            <input type="text" id="login" placeholder="Login Name" class="form-control display-7">
+                        </div>
+					             	<div class="form-group col" data-for="password">
+                            <input type="password" id="password" placeholder="New Password" class="form-control display-7">
+                        </div>
+                        <div class="col-auto input-group-btn">
+                            <button id="edit" class="btn btn-primary  display-4">GO!</button>
+                        </div>
+                    </div>
+                </form><!---Formbuilder Form--->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/script.min.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
+  <script src="assets/parallax/jarallax.min.js"></script>
+  <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
+  <script src="assets/ytplayer/jquery.mb.ytplayer.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="assets/formoid/formoid.min.js"></script>
+  
+  
+</body>
+</html>
